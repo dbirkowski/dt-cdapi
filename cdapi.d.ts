@@ -7,19 +7,50 @@ declare namespace campaign {
     export function clearData(name: string): void;
     /**
      * Retrieves the value of the custom variable from the campaign's persistent storage.
+     * 
+     * @param name Optional name of the variable that you have passed to campaign.setData() method. Leave blank to retrieve all the data set by current campaign for the given visitor.
      */
     export function getData(name?: string): any;
     /**
      * Gets the content of all variants generated for the given visitor on the current page in JSON format.
      */
     export function getElements(): Object;
+    /**
+     * Gets information about the variants generated for the current campaign.
+     */
     export function getExperience(): Object;
+    /**
+     * Gets the campaign name.
+     */
     export function getName(): string;
-    export function getRecommendations(): Array < Object > ;
+    /**
+     * Gets the recommended products that arrived with the campaign. Campaign type should be set to MaxRecommend.
+     */
+    export function getRecommendations(): Array <Object>;
+    /**
+     * Retrieves CSS text from campaign's HTML sources of the variants generated on the current page. 
+     * 
+     * @param idAttribute Optional ID attribute of the target CSS node	
+     */
     export function getStyles(idAttribute?: string): Array <string>;
+    /**
+     * Identifies whether only default variants were generated on the page for the given campaign. 
+     * 
+     * In case this method is called when campaign has not been generated yet, it throws an exception. This was done to avoid confusion with the implicitly converted value campaign.isDefault() may return.
+     */
     export function isDefault(): boolean;
-    export function setData(name: string, value): void;
-    export function setData(name: string, value, expires: number): void;
+    /**
+     * Saves the value of the custom variable to the campaign's persistent storage, so it can be retrieved on other site pages using the campaign.getData() method.
+     * The main difference between campaign.setData and visitor.setData is where the data is available. You can use campaign.setData to store campaign-specific information that will not be available for any other campaign. For instance, you may need to create only one campaign that runs if a certain banner was shown on a previous page. Whether or not the banner was shown to the user on a previous page can be stored with campaign.setData and then retrieved with campaign.getData within the scripts of the same campaign only.
+     * 
+     * @param name Name of the variable.
+     * @param value Value of the variable
+     * @param expires Optional. Variable's life time in days. The default value is '0' - this means 'session' 
+     */
+    export function setData(name: string, value, expires?: number): void;
+    /**
+     * Editable property to be used for data sharing between different scripts on a page.
+     */
     export var scope: Object;
 }
 
@@ -74,7 +105,7 @@ declare namespace dom {
     /**
      * Reads the specified attribute values for the selected elements.
      */
-    export function getNodesAttribute(selector: string, name: string): Promise < void > ;
+    export function getNodesAttribute(selector: string, name: string): Promise<void>;
     /**
      * Changes the relative position of the target node.
      */
