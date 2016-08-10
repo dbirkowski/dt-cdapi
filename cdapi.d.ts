@@ -1,13 +1,14 @@
 declare namespace campaign {
     /**
      * Removes custom variable data from the campaign's persistent storage.
+     * 
+     * @param name Name of the variable.
      */
     export function clearData(name: string): void;
     /**
      * Retrieves the value of the custom variable from the campaign's persistent storage.
      */
-    export function getData(): any;
-    export function getData(name: string): any;
+    export function getData(name?: string): any;
     /**
      * Gets the content of all variants generated for the given visitor on the current page in JSON format.
      */
@@ -15,8 +16,7 @@ declare namespace campaign {
     export function getExperience(): Object;
     export function getName(): string;
     export function getRecommendations(): Array < Object > ;
-    export function getStyles(): Array < string > ;
-    export function getStyles(idAttribute: string): Array < string > ;
+    export function getStyles(idAttribute?: string): Array <string>;
     export function isDefault(): boolean;
     export function setData(name: string, value): void;
     export function setData(name: string, value, expires: number): void;
