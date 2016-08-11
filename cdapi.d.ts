@@ -102,9 +102,7 @@ declare namespace dom {
      * @param zIndex Optional z-index value. By default, the value is the 'maximum z-index value on the page +10'.
      */
     function bringToFront(element: string, zIndex?: Number): void;
-
     function bringToFront(element: HTMLElement, zIndex?: Number): void;
-
     function bringToFront(element: Array <HTMLElement> , zIndex?: Number): void;
     /**
      * Updates an existing image or banner.
@@ -118,9 +116,7 @@ declare namespace dom {
      * imageTitle ← StringImage 'title' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
      */
     function changeImageBanner(element: string, properties: Object): void;
-
     function changeImageBanner(element: HTMLElement, properties: Object): void;
-
     function changeImageBanner(element: Array <HTMLElement> , properties: Object): void;
     /**
      * Sets the 'href' attribute value of the target node.
@@ -129,9 +125,7 @@ declare namespace dom {
      * @param value New 'href' attribute value.
      */
     function changeLinkUrl(element: string, value: string): void;
-
     function changeLinkUrl(element: HTMLElement, value: string): void;
-
     function changeLinkUrl(element: Array <HTMLElement> , value: string): void;
     /**
      * Updates the inline style of the target node.
@@ -140,9 +134,7 @@ declare namespace dom {
      * @param cssRules New CSS rules for the target node.
      */
     function changeStyle(element: string, cssRules: string): void;
-
     function changeStyle(element: HTMLElement, cssRules: string): void;
-
     function changeStyle(element: Array <HTMLElement> , cssRules: string): void;
     /**
      * Replaces the innerHTML value of the target node.
@@ -153,9 +145,7 @@ declare namespace dom {
      * @param html New innerHTML value.
      */
     function editHtml(element: string, html: string): void;
-
     function editHtml(element: HTMLElement, html: string): void;
-
     function editHtml(element: Array <HTMLElement> , html: string): void;
     /**
      * Reads the specified attribute values for the selected elements.
@@ -174,81 +164,96 @@ declare namespace dom {
      * @param deltaY Y-axis shift in pixels (positive or negative).
      */
     function freeMove(element: string, deltaX: Number, deltaY: Number): void;
-
     function freeMove(element: HTMLElement, deltaX: Number, deltaY: Number): void;
-
     function freeMove(element: Array <HTMLElement> , deltaX: Number, deltaY: Number): void;
     /**
      * Changes the relative placement of the target node within its parent in relation to the siblings.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param index New position of the target node compared to its siblings. Index starts from 0.
      */
     function guidedMove(element: string, index: Number): void;
-
     function guidedMove(element: HTMLElement, index: Number): void;
-
     function guidedMove(element: Array <HTMLElement> , index: Number): void;
     /**
      * Hides the target node.
+     * 
+     * @param element Element(s) or CSS path to be hidden via added 'visibility: hidden' style
      */
     function hide(element: string): void;
-
     function hide(element: HTMLElement): void;
-
     function hide(element: Array <HTMLElement> ): void;
     /**
      * Adds HTML content above the target node.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param html HTML to be added.
      */
     function insertHtmlAbove(element: string, html: string): void;
-
     function insertHtmlAbove(element: HTMLElement, html: string): void;
-
     function insertHtmlAbove(element: Array <HTMLElement> , html: string): void;
     /**
      * Adds HTML content below the target node.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param html HTML to be added.
      */
     function insertHtmlBelow(element: string, html: string): void;
-
     function insertHtmlBelow(element: HTMLElement, html: string): void;
-
     function insertHtmlBelow(element: Array <HTMLElement> , html: string): void;
     /**
      * Adds HTML content to the end of the content of the target node.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param html HTML to be added.
      */
     function insertHtmlWithin(element: string, html: string): void;
-
     function insertHtmlWithin(element: HTMLElement, html: string): void;
-
     function insertHtmlWithin(element: Array <HTMLElement> , html: string): void;
     /**
      * Creates an image banner before the target node.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param properties Optional banner properties:
+     *     - linkUrl ← String: 'href' value; if the omitted image is not wrapped with the <a> tag.
+     *     - imageUrl ← String: Image 'src' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
+     *     - imageAlt ← String: Image 'alt' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
+     *     - imageTitle ← String: Image 'title' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
      */
     function insertImageBannerAbove(element: string, properties: Object): void;
-
     function insertImageBannerAbove(element: HTMLElement, properties: Object): void;
-
     function insertImageBannerAbove(element: Array <HTMLElement> , properties: Object): void;
     /**
      * Creates an image banner after the target node.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param properties Optional banner properties:
+     *     - linkUrl ← String: 'href' value; if the omitted image is not wrapped with the <a> tag.
+     *     - imageUrl ← String: Image 'src' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
+     *     - imageAlt ← String: Image 'alt' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
+     *     - imageTitle ← String: Image 'title' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
      */
     function insertImageBannerBelow(element: string, properties: Object): void;
-
     function insertImageBannerBelow(element: HTMLElement, properties: Object): void;
-
     function insertImageBannerBelow(element: Array <HTMLElement> , properties: Object): void;
     /**
      * Creates an image banner within the target node.
+     * 
+     * @param element Element(s) or CSS path to be processed.
+     * @param properties Optional banner properties:
+     *     - linkUrl ← String: 'href' value; if the omitted image is not wrapped with the <a> tag.
+     *     - imageUrl ← String: Image 'src' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
+     *     - imageAlt ← String: Image 'alt' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
+     *     - imageTitle ← String: Image 'title' attribute value; if you don't pass a property, the attribute is not added within the node attribute.
      */
     function insertImageBannerWithin(element: string, properties: Object): void;
-
     function insertImageBannerWithin(element: HTMLElement, properties: Object): void;
-
     function insertImageBannerWithin(element: Array <HTMLElement> , properties: Object): void;
     /**
      * Deletes the target node from the DOM.
      */
     function remove(element: string): void;
-
     function remove(element: HTMLElement): void;
-
     function remove(element: Array <HTMLElement> ): void;
     /**
      * Removes the CSS that was previously added.
@@ -262,9 +267,7 @@ declare namespace dom {
      * Changes height and width of the target node.
      */
     function resize(element: string, width: Number, height: Number, deltaX: Number, deltaY: Number): void;
-
     function resize(element: HTMLElement, width: Number, height: Number, deltaX: Number, deltaY: Number): void;
-
     function resize(element: Array <HTMLElement> , width: Number, height: Number, deltaX: Number, deltaY: Number): void;
     /**
      * Sets the specified attribute values for the selected elements.
