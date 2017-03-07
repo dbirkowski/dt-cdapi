@@ -3,23 +3,23 @@ DefinitelyTyped cdapi definition
 
 #Installing
 
-globally:
+1. globally:
 ```javascript
 npm install typings -g
 ```
 
-in your project folder:
+2. in your project folder:
 ```javascript
 typings init
 typings install
 ```
 
-put `cdapi.d.ts` file inside `typings` folder
+3. put `cdapi.d.ts` file inside `typings` folder
 
-edit your `index.d.ts` file inside `typings` folder and add following line:
+4. edit your `index.d.ts` file inside `typings` folder and add following line:
 
-```javascript
+```typescript
 /// <reference path="cdapi.d.ts" />
 ```
 
-now the intellisense for cdapi should work in all subsequent subfolders
+5. now the intellisense for cdapi should work in all subsequent subfolders
